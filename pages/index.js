@@ -8,7 +8,7 @@ const handleClick = () => {
 const Home = () => (
   <div>
     <h1>Welcome</h1>
-    <Button variant="contained" color="primary" onClick={handleClick()}>Click!</Button>
+    <Button variant="contained" color="primary" onClick={handleClick}>Click!</Button>
   </div>
 );
 
