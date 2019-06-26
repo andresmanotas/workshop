@@ -2,7 +2,6 @@ import React from 'react';
 import { gql } from 'apollo-boost';
 import Button from '@material-ui/core/Button';
 import client from '../apollo/client';
-// import Post from '../components/Post';
 import Posts from '../components/Posts';
 
 
