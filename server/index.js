@@ -1,13 +1,14 @@
 const express = require('express');
 const next = require('next');
 const graphqlHTTP = require('express-graphql');
+const config = require('../appConfig');
 const schema = require('./schema');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const server = express();
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 app.prepare()
   .then(() => {
@@ -16,8 +17,8 @@ app.prepare()
       graphiql: true,
     }));
     server.get('*', (req, res) => handle(req, res));
-    server.listen(PORT, () => {
-      console.log(`App listening in PORT ${PORT}`);
+    server.listen(config.PORT, () => {
+      console.log(`App listening in PORT ${config.HOST}:${config.PORT}`);
     });
   })
   .catch((ex) => {
