@@ -33,7 +33,6 @@ const POSTS = [
   },
 ];
 
-
 const schema = makeExecutableSchema({
   typeDefs: `
     type Post {
